@@ -1,0 +1,43 @@
+.post {
+  margin: 20px auto;
+  border: solid 1px #d1d1d1;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  img {
+    display: block;
+    height: 150px;
+  }
+}
+
+.left-wrapper {
+  display: flex;
+  padding: 15px 32px;
+}
+
+.post-meta {
+  text-align: center;
+  border-right: 1px solid #c1c1c1;
+  padding: 20px;
+}
+
+.post-content {
+  width: 50%;
+}
+
+.date-vote {
+  padding: 15px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  .voting-ui {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    .plus-vote-button, .minus-vote-button {
+      cursor: pointer;
+    }
+  }
+}

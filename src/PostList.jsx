@@ -9,7 +9,7 @@ function PostList(props) {
       {Object.keys(props.postList).map(function(postId) {
         let post = props.postList[postId];
         return <Post author={post.author}
-          imgUrl={post.imageUrl}
+          imgUrl={post.imgUrl}
           title={post.title}
           content={post.content}
           voteValue={post.voteValue}
@@ -17,7 +17,6 @@ function PostList(props) {
           id={post.id}
           key={post.id}/>
       })}
-      <hr/>
     </div>
   )
 }

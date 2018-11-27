@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Moment from 'moment';
 import {v4} from 'uuid';
-import {Input, Container, Button} from 'react-materialize';
+import {Input,  Button} from 'react-materialize';
 
 function AddPost(props) {
   let _author = null;
@@ -31,7 +31,7 @@ function AddPost(props) {
   }
 
   return (
-    <Container>
+    <div>
       <form onSubmit={handlePostSubmit}>
       <Input id="author" ref={(input) => {_author = input;}} s={12} placeholder="Your Handle"></Input>
         <Input id="title" ref={(input) => {_title = input;}} s={12} placeholder="Title of Post"></Input>
@@ -39,7 +39,7 @@ function AddPost(props) {
         <Input type="textarea" ref={(textarea) => {_content = textarea;}} id="content" s={12} placeholder="Your Post"></Input>
         <Button type="submit" waves='light'>Submit</Button>
       </form>
-    </Container>
+    </div>
   )
 }
 
