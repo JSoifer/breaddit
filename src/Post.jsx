@@ -6,28 +6,45 @@ import {Icon} from 'react-materialize';
 import {connect} from 'react-redux';
 
 function Post(props) {
-  function voteForPost(postId, vote) {
-    
+  function voteForPost(postId, target) {
+    const { dispatch } = props;
+    if (target === "plus-vote-button"){
+      const action = {
+        type: 'UP_VOTE',
+        postId: postId
+      }
+      dispatch(action);
+    } else if (target === "minus-vote-button") {
+      const action = {
+        type: 'DOWN_VOTE',
+        postId: postId
+      }
+      dispatch(action);
+    }
   }
-  console.log(props.imgUrl)
+
   const postInfo =
   <div className="post">
     <div className="left-wrapper">
-    <div className="post-meta">
-      <img src={props.imgUrl}/>
-      <h3>{props.author}</h3>
+      <div className="post-meta">
+        <img src={props.imgUrl}/>
+        <h3>{props.author}</h3>
+      </div>
+      <div className="post-content">
+        <h4>{props.title}</h4>
+        <h4>{props.content}</h4>
+      </div>
     </div>
-    <div className="post-content">
-      <h4>{props.title}</h4>
-      <h4>{props.content}</h4>
-    </div>
-  </div>
     <div className="date-vote">
       <h4>Time here</h4>
       <div className="voting-ui">
-      <Icon className="plus-vote-button" small>add_circle_outline</Icon>
-      <h4>{props.voteValue}</h4>
-      <Icon className="minus-vote-button" small>remove_circle_outline</Icon>
+        <div onClick={(event) => {voteForPost(props.id, event.target.className);}} className="plus-vote-button">
+          <Icon small>add_circle_outline</Icon>
+        </div>
+        <h4>{props.voteValue}</h4>
+                <div onClick={(event) => {voteForPost(props.id, event.target.className);}} className="minus-vote-button">
+        <Icon small>remove_circle_outline</Icon>
+        </div>
       </div>
     </div>
 

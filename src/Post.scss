@@ -38,6 +38,9 @@
     align-items: center;
     .plus-vote-button, .minus-vote-button {
       cursor: pointer;
+      i {
+        pointer-events: none;
+      }
     }
   }
 }

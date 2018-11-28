@@ -3,7 +3,6 @@ import Post from './Post';
 import PropTypes from 'prop-types';
 
 function PostList(props) {
-  console.log(props)
   return(
     <div>
       {Object.keys(props.postList).map(function(postId) {
@@ -13,7 +12,6 @@ function PostList(props) {
           title={post.title}
           content={post.content}
           voteValue={post.voteValue}
-
           id={post.id}
           key={post.id}/>
       })}
